@@ -15,7 +15,16 @@ addLayer("p", {
     exponent: 0.7, // Prestige currency exponent
     upgrades: {
         11: {
-
+            title: "1",
+            description: "idk",
+            cost: new Decimal(1),
+        },
+        12: {
+            title: "2",
+            description: "idk",
+            cost: new Decimal(10),
+            effect(){return player[this.layer].points.add(1).pow(1.1)},
+            effectDisplay(){return format(upgradeEffect(this.layer, this.id))+"x"},
         }
     },
     gainMult() { // Calculate the multiplier for main currency from bonuses
