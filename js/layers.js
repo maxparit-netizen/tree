@@ -25,6 +25,13 @@ addLayer("p", {
             cost: new Decimal(10),
             effect(){return player[this.layer].points.add(1).pow(1.1)},
             effectDisplay(){return format(upgradeEffect(this.layer, this.id))+"x"},
+        },
+        13: {
+            title: "3",
+            description: "idk",
+            cost: new Decimal(100),
+            effect(){return player.points.pow(0.8)},
+            effectDisplay(){return format(upgradeEffect(this.layer, this.id))+"x"},
         }
     },
     gainMult() { // Calculate the multiplier for main currency from bonuses
